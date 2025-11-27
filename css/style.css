@@ -1,0 +1,116 @@
+body {
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.header__brand {
+  background-color: blue;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+}
+.header__brand img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  padding: 2px;
+  border: 1px solid #eee;
+}
+.header__logo {
+  padding: 1rem;
+}
+.header__title {
+  padding: 1rem;
+}
+.header__title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: black;
+  margin-top: 1rem;
+}
+.header__nav ul {
+  display: flex;
+  justify-content: center;
+  background-color: yellow;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+.header__nav ul li {
+  padding: 1rem;
+  position: relative;
+}
+.header__nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+.header__nav ul li::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+}
+.header__nav ul li:hover::after {
+  width: 100%;
+}
+
+.footer-wrapper {
+  background-color: #999;
+  color: #ddd;
+  padding: 16px;
+  text-align: center;
+}
+.footer-wrapper .footer__name {
+  display: inline-block;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+.footer-wrapper .footer a {
+  color: #222;
+  text-decoration: none;
+}
+
+@media all and (max-width: 375px) {
+  .header__title {
+    line-height: 0.95;
+  }
+  .main-wrapper {
+    padding: 1rem;
+  }
+}
+@media all and (min-width: 376px) {
+  .header__brand {
+    justify-content: center;
+  }
+  .header__title {
+    font-size: 1.25rem;
+  }
+  .main-wrapper {
+    padding: 2rem 3rem;
+  }
+}/*# sourceMappingURL=style.css.map */
