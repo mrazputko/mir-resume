@@ -1,19 +1,15 @@
 @import "./_variables";
 
 body {
-  background-color: #eee;
+  background-color: $body-background-color;
   margin: 0;
   padding: 0;
 //   font-size: 1.1rem;
 
-// .roboto-<uniquifier> {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-//   font-variation-settings:
-//     "wdth" 100;
-// }
 }
 
 .page {
@@ -22,24 +18,27 @@ body {
     min-height: 100vh;
 }
 
-.header-wrapper {
-    // background-color: #eee;
-    // padding: 16px;
-}
+// HEADER HERE ######
 
 .header {
-    // background-color: #eee;
-    display: flex;
-    flex-direction: column;
 
     &__brand {
-        background-color: blue;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
-
+        
+        z-index: 10;
+        position: sticky;
+        top: 0;
+                
+        background-color: $brand-background-color;
         color: white;
+    }
+    
+    &__logo {
+        padding: 1rem;
+        transition: all 0.6s ease-in-out;
 
         & img {
             width: 90px;
@@ -51,15 +50,7 @@ body {
         }
     }
 
-    &__logo {
-        padding: 1rem;
-        transition: all 0.6s ease-in-out;
-    }
-
     &__logo:hover {
-        // opacity: 0.8;
-        // transform: scale(1.05);
-        // transform: rotateX(20deg) rotateY(20deg) scale(1.05);
         transform: rotateY(180deg);
     }
 
@@ -76,40 +67,38 @@ body {
         }
     }
 
-    &__nav {  
-        position: sticky;
+    &__nav {
+        background-color: yellow;
+        border-bottom: 3px solid black;
+        // z-index: -10;
         
         ul {
+            // position: relative;
             display: flex;
             justify-content: center;
 
-
-            background-color: yellow;
             list-style: none;
-            margin: 0;
+            margin: 0 0 .25rem 0;
             padding: 0;
             gap: 1rem;
 
             li {
-                padding: 0.75rem;
+                padding: 0.75rem 0.75rem .5rem 0.75rem;
                 position: relative;
-                // background-color: orchid;
 
                 a {
                     text-transform: uppercase;
                     text-decoration: none;
                     color: black;
-                    
                 }
                 
                 &::after {
-                    content: " ";
-                    // display: block;
+                    content: "";
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     width: 0%;
-                    height: 2px;
+                    height: 1px;
                     background-color: black;
                     transition: all 0.3s ease-in-out;
                 }
@@ -122,23 +111,17 @@ body {
     }
 }
 
-.main-wrapper {
-    .main {
-        // color: #111;
-        // background-color: #ddd;
-    }
-}
+// FOOTER HERE ######
 
 .footer-wrapper {
-    background-color: #999;
-    color: #ddd;
-    padding: 16px;
-    // margin-top: 2rem;
+    background-color: $footer-background-color;
+    color: $footer-color;
+    padding: 1rem;
     text-align: center;
 
     .footer {
+        // background-color: #eee;
         &__name {
-            display: inline-block;
             border-bottom: 1px solid #bbb;
             padding-bottom: 8px;
             margin-bottom: 12px;
@@ -166,15 +149,7 @@ body {
 
 // @media all and (min-width: 376px) and (max-width: 1200px) {
 @media all and (min-width: 376px) {
-    body {
-        // font-size: 1.1rem;
-    }
-    .header {
-        &__brand {
-            justify-content: center;
-            
-        }
-        
+    .header {        
         &__title {
             font-size: 1.25rem;
         }
@@ -185,4 +160,21 @@ body {
         padding: 2rem 3rem;
     }
 
+    .main {
+        &__section {
+            background-color: antiquewhite;
+            columns: 3;
+            column-width: 200px;
+            column-gap: 2rem;
+            column-rule: #999 dotted 1px;
+            // column-fill: auto;
+        }
+
+        h3 {
+            // column-span: all;
+            border-bottom: #222 solid 1px;
+            padding: 1rem;
+        }
+
+    }
 }

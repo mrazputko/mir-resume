@@ -1,5 +1,5 @@
 body {
-  background-color: #eee;
+  background-color: white;
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
@@ -14,28 +14,27 @@ body {
   min-height: 100vh;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-}
 .header__brand {
-  background-color: blue;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  background-color: blue;
   color: white;
 }
-.header__brand img {
+.header__logo {
+  padding: 1rem;
+  transition: all 0.6s ease-in-out;
+}
+.header__logo img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
   padding: 2px;
   border: 1px solid #eee;
-}
-.header__logo {
-  padding: 1rem;
-  transition: all 0.6s ease-in-out;
 }
 .header__logo:hover {
   transform: rotateY(180deg);
@@ -52,19 +51,19 @@ body {
   margin-top: 1rem;
 }
 .header__nav {
-  position: sticky;
+  background-color: yellow;
+  border-bottom: 3px solid black;
 }
 .header__nav ul {
   display: flex;
   justify-content: center;
-  background-color: yellow;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0.25rem 0;
   padding: 0;
   gap: 1rem;
 }
 .header__nav ul li {
-  padding: 0.75rem;
+  padding: 0.75rem 0.75rem 0.5rem 0.75rem;
   position: relative;
 }
 .header__nav ul li a {
@@ -73,12 +72,12 @@ body {
   color: black;
 }
 .header__nav ul li::after {
-  content: " ";
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
-  height: 2px;
+  height: 1px;
   background-color: black;
   transition: all 0.3s ease-in-out;
 }
@@ -89,11 +88,10 @@ body {
 .footer-wrapper {
   background-color: #999;
   color: #ddd;
-  padding: 16px;
+  padding: 1rem;
   text-align: center;
 }
 .footer-wrapper .footer__name {
-  display: inline-block;
   border-bottom: 1px solid #bbb;
   padding-bottom: 8px;
   margin-bottom: 12px;
@@ -112,13 +110,25 @@ body {
   }
 }
 @media all and (min-width: 376px) {
-  .header__brand {
-    justify-content: center;
-  }
   .header__title {
     font-size: 1.25rem;
   }
   .main-wrapper {
     padding: 2rem 3rem;
+  }
+  .main__section {
+    background-color: antiquewhite;
+    -moz-columns: 3;
+         columns: 3;
+    -moz-column-width: 200px;
+         column-width: 200px;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    -moz-column-rule: #999 dotted 1px;
+         column-rule: #999 dotted 1px;
+  }
+  .main h3 {
+    border-bottom: #222 solid 1px;
+    padding: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
