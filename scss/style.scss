@@ -35,6 +35,7 @@ body {
     &__brand {
         background-color: blue;
         display: flex;
+        flex-direction: row;
         justify-content: flex-start;
         align-items: center;
 
@@ -68,9 +69,12 @@ body {
     }
 
     &__nav {  
+        position: sticky;
+        
         ul {
             display: flex;
             justify-content: center;
+
 
             background-color: yellow;
             list-style: none;
@@ -79,7 +83,7 @@ body {
             gap: 1rem;
 
             li {
-                padding: 1rem;
+                padding: 0.75rem;
                 position: relative;
                 // background-color: orchid;
 
