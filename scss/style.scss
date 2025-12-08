@@ -1,49 +1,48 @@
 @import "./_variables";
+@import "./_common";
 
 body {
-  background-color: $body-background-color;
-  margin: 0;
-  padding: 0;
-//   font-size: 1.1rem;
-
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.page {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    
+    background-color: $body-background-color;
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 // HEADER HERE ######
 
 .header {
-
+    
     &__brand {
+        position: sticky;
+        top: 0;
+
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+
+        padding: 1rem;
         
         z-index: 10;
-        position: sticky;
-        top: 0;
                 
         background-color: $brand-background-color;
         color: white;
     }
     
     &__logo {
-        padding: 1rem;
         transition: all 0.6s ease-in-out;
 
         & img {
-            width: 90px;
-            height: 90px;
-            // background-color: red;
+            width: 54px;
+            height: 54px;
             border-radius: 50%;
             padding: 2px;
             border: 1px solid #eee;
@@ -55,22 +54,12 @@ body {
     }
 
     &__title {
-        padding: 1rem;
-
-        &::after {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 1px;
-            background-color: black;
-            margin-top: 1rem;
-        }
+        padding-left: 1rem;
     }
 
     &__nav {
-        background-color: yellow;
+        background-color: $nav-background-color;
         border-bottom: 3px solid black;
-        // z-index: -10;
         
         ul {
             // position: relative;
@@ -80,7 +69,7 @@ body {
             list-style: none;
             margin: 0 0 .25rem 0;
             padding: 0;
-            gap: 1rem;
+            column-gap: 1rem;
 
             li {
                 padding: 0.75rem 0.75rem .5rem 0.75rem;
@@ -96,85 +85,171 @@ body {
                     content: "";
                     position: absolute;
                     bottom: 0;
-                    left: 0;
+                    left: 50%;
                     width: 0%;
-                    height: 1px;
-                    background-color: black;
-                    transition: all 0.3s ease-in-out;
+                    height: 3px;
+                    background-color: $brand-background-color;
+                    transition: all 0.4s ease-in-out;
                 }
         
                 &:hover::after {
                     width: 100%;
+                    left: 0;
                 }
             }
         }
     }
 }
 
+// MAIN HERE ######
+
+.main {
+    padding: $padding-sm 0rem;
+
+    &__title,
+    &__text {
+        padding: $padding-sm;
+    }
+}
+
 // FOOTER HERE ######
 
-.footer-wrapper {
+.footer {
     background-color: $footer-background-color;
     color: $footer-color;
-    padding: 1rem;
-    text-align: center;
 
-    .footer {
-        // background-color: #eee;
-        &__name {
-            border-bottom: 1px solid #bbb;
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-        }
-
-        a {
-            color: #222;
-            text-decoration: none;
-        }
-    }
-}
-
-
-@media all and (max-width: 375px) {
-    .header {
-        &__title {
-            line-height: 0.95;
-        }
-    }
-
-    .main-wrapper {
-        padding: 1rem;
-    }
-}
-
-// @media all and (min-width: 376px) and (max-width: 1200px) {
-@media all and (min-width: 376px) {
-    .header {        
-        &__title {
-            font-size: 1.25rem;
+    &_container {
+        display: flex;
+        > * {
+            flex: 1;
         }
     }
     
-    .main-wrapper {
-        // font-size: 1.1rem;
-        padding: 2rem 3rem;
+    a {
+        color: #222;
+        text-decoration: none;
+    }
+}
+
+// MEDIA QUERIES HERE ######
+
+// MOBILE phones size
+
+@media all and (max-width: 600px) {
+    .header {
+
+        &__brand {
+
+            &__title {
+                line-height: 0.95;
+            }
+        }
+
+    }
+    .main {
+        &__image {
+            height: 180px;
+            
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+        }
+
+        &__image_01 {
+            background-image: url("../images/content-image-01-1200.jpeg");
+        }
+    }
+
+
+    .footer {
+        padding: $padding-sm;
+
+        &_container {
+            flex-direction: column;
+            row-gap: 1rem;
+
+            & > *:not(:last-child) {
+                padding-bottom: .75rem;
+                border-bottom: $border-color-light solid 1px;
+            }
+        }
+    }
+
+    // CONTAINER PROPERTIES
+
+    .container {
+        width: 100%;
+    }
+}
+
+// TABLETS and small desktops size
+
+// @media all and (min-width: 600px) and (max-width: 1200px) {
+@media all and (min-width: 600px) {
+    .header {
+        &__logo {
+            & img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        
+        &__title {
+            font-size: 1.25rem;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 1px;
+                background-color: #000;
+                margin-top: 1rem;
+            }
+        }
     }
 
     .main {
-        &__section {
-            background-color: antiquewhite;
-            columns: 3;
-            column-width: 200px;
-            column-gap: 2rem;
-            column-rule: #999 dotted 1px;
-            // column-fill: auto;
+        &__text {
+            padding: $padding-md;
         }
 
-        h3 {
-            // column-span: all;
-            border-bottom: #222 solid 1px;
-            padding: 1rem;
+        &__image {
+            height: 260px;
+            
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
         }
 
+        &__image_01 {
+            background-image: url("../images/content-image-01-2880.jpeg");
+        }
     }
+
+    .footer {
+        padding: $padding-md;
+
+        &_container {
+            flex-direction: row;
+            column-gap: 2rem;
+
+            & > *:not(:last-child) {
+                padding-right: .75rem;
+                border-right: $border-color-light solid 1px;
+            }
+        }
+    }
+
+    // CONTAINER PROPERTIES
+
+    .container {
+        width: clamp(600px, 80vw, 1200px);
+    }
+
 }

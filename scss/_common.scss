@@ -1,0 +1,18 @@
+.block_background {
+    background-color: $block-background-color;
+}
+
+.block_columns {
+    columns: auto;
+    column-width: 300px;
+    column-gap: 2rem;
+    column-rule: $border-color-dark dotted 1px;
+}
+
+.style_bold {
+    font-weight: 600;
+}
+
+.container {
+    margin: 0 auto;
+}
