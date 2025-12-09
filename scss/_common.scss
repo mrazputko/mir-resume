@@ -1,15 +1,17 @@
-.block_background {
-    background-color: $block-background-color;
-}
-
 .block_columns {
-    columns: auto;
+    column-count: 3;
     column-width: 300px;
+    // column-width: 300px;
+    // column-fill: auto;
     column-gap: 2rem;
     column-rule: $border-color-dark dotted 1px;
 }
 
-.style_bold {
+.style_background-color_gray {
+    background-color: $block-background-color;
+}
+
+.style_text_bold {
     font-weight: 600;
 }
 

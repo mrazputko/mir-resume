@@ -14,6 +14,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    line-height: 1.5;
 }
 
 // HEADER HERE ######
@@ -41,8 +42,8 @@ body {
         transition: all 0.6s ease-in-out;
 
         & img {
-            width: 54px;
-            height: 54px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             padding: 2px;
             border: 1px solid #eee;
@@ -55,6 +56,7 @@ body {
 
     &__title {
         padding-left: 1rem;
+        // line-height: .75;
     }
 
     &__nav {
@@ -104,11 +106,19 @@ body {
 // MAIN HERE ######
 
 .main {
-    padding: $padding-sm 0rem;
+    &__title {
+        line-height: 1;
+    }
+    
+    &__text h3 {
+        // background-color: green;
+        padding-bottom: $padding-sm;
+        border-bottom: 1px solid #999;
+    }
 
     &__title,
     &__text {
-        padding: $padding-sm;
+        padding: 0 $padding-md;
     }
 }
 
@@ -120,6 +130,7 @@ body {
 
     &_container {
         display: flex;
+        align-items: flex-start;
         > * {
             flex: 1;
         }
@@ -137,35 +148,48 @@ body {
 
 @media all and (max-width: 600px) {
     .header {
-
-        &__brand {
-
-            &__title {
-                line-height: 0.95;
-            }
+        &__title {
+            line-height: 0.95;
         }
-
     }
+
     .main {
+        padding: $padding-sm 0rem;
+
         &__image {
-            height: 180px;
+            height: 220px;
             
-            background-position: center;
-            background-attachment: fixed;
             background-size: cover;
             
             border-top: 1px solid #999;
             border-bottom: 1px solid #999;
         }
-
-        &__image_01 {
-            background-image: url("../images/content-image-01-1200.jpeg");
+        
+        &__image_provin {
+            background-attachment: fixed;
+            background-position: right 50% top 35%;
+            background-image: url("../images/content-image-provin-1200.jpeg");
+        }
+        &__image_poland {
+            background-attachment: fixed;
+            background-position: center;
+            background-image: url("../images/content-image-poland-1200.jpg");
+        }
+        &__image_sbu {
+            background-attachment: fixed;
+            background-position: center;
+            background-image: url("../images/content-image-sbu-1200.jpg");
+        }
+        &__image_war {
+            background-attachment: fixed;
+            background-position: center;
+            background-image: url("../images/content-image-war-1200.jpeg");
         }
     }
 
 
     .footer {
-        padding: $padding-sm;
+        padding: $padding-md;
 
         &_container {
             flex-direction: column;
@@ -212,6 +236,8 @@ body {
     }
 
     .main {
+        padding: $padding-md 0rem;
+
         &__text {
             padding: $padding-md;
         }
@@ -219,16 +245,33 @@ body {
         &__image {
             height: 260px;
             
-            background-position: center;
-            background-attachment: fixed;
+            // background-attachment: fixed;
             background-size: cover;
             
             border-top: 1px solid #999;
             border-bottom: 1px solid #999;
         }
-
-        &__image_01 {
-            background-image: url("../images/content-image-01-2880.jpeg");
+        
+        &__image_provin {
+            background-attachment: fixed;
+            background-position: right 50% bottom 80%;
+            background-image: url("../images/content-image-provin-2880.jpeg");
+        }
+        &__image_poland {
+            background-attachment: fixed;
+            background-position: right 50% top 60%;
+            // background-image: url("../images/content-image-poland-1200.jpg");
+            background-image: url("../images/content-image-poland-2880.jpg");
+        }
+        &__image_sbu {
+            background-attachment: fixed;
+            background-position: right 50% top 60%;
+            background-image: url("../images/content-image-sbu-2880.jpg");
+        }
+        &__image_war {
+            background-attachment: fixed;
+            background-position: right 50% top 60%;
+            background-image: url("../images/content-image-war-2880.jpeg");
         }
     }
 
