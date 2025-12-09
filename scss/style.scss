@@ -14,7 +14,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    line-height: 1.5;
+    line-height: $line-height-base;
 }
 
 // HEADER HERE ######
@@ -107,7 +107,7 @@ body {
 
 .main {
     &__title {
-        line-height: 1;
+        line-height: 1.2;
     }
     
     &__text h3 {
@@ -238,8 +238,17 @@ body {
     .main {
         padding: $padding-md 0rem;
 
+        .style_no-margin-bottom {
+            margin-block-end: 0;
+            // margin-block-end: 0 !important;
+        }
+
         &__text {
             padding: $padding-md;
+            p {
+                margin-block-start: 0;
+                margin-block-end: $line-height-base;
+            }
         }
 
         &__image {

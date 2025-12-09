@@ -32,7 +32,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  line-height: 1.5;
+  line-height: 1.5rem;
 }
 
 .header__brand {
@@ -101,7 +101,7 @@ body {
 }
 
 .main__title {
-  line-height: 1;
+  line-height: 1.2;
 }
 .main__text h3 {
   padding-bottom: 1rem;
@@ -194,8 +194,15 @@ body {
   .main {
     padding: 2rem 0rem;
   }
+  .main .style_no-margin-bottom {
+    margin-block-end: 0;
+  }
   .main__text {
     padding: 2rem;
+  }
+  .main__text p {
+    margin-block-start: 0;
+    margin-block-end: 1.5rem;
   }
   .main__image {
     height: 260px;
