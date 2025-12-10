@@ -1,0 +1,33 @@
+{
+  "name": "mir-resume",
+  "version": "1.0.0",
+  "description": "MIR's resume",
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "homepage": "https://github.com/mrazputko/mir-resume#readme",
+  "bugs": {
+    "url": "https://github.com/mrazputko/mir-resume/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/mrazputko/mir-resume.git"
+  },
+  "license": "ISC",
+  "author": "Michael V. Razputko",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "sass --watch scss/style.scss css/style.css",
+    "serve": "serve",
+    "start": "serve watch-css"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.95.1",
+    "serve": "^14.2.5"
+  }
+}

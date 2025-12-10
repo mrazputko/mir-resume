@@ -162,7 +162,7 @@ body {
             background-size: cover;
             
             border-top: 1px solid #999;
-            border-bottom: 1px solid #999;
+            border-bottom: 4px solid #999;
         }
         
         &__image_provin {
@@ -245,6 +245,12 @@ body {
 
         &__text {
             padding: $padding-md;
+            h3 {
+                background-color: #999;
+                color: white;
+                padding: .5rem;
+                text-transform: uppercase;
+            }
             p {
                 margin-block-start: 0;
                 margin-block-end: $line-height-base;
@@ -258,7 +264,7 @@ body {
             background-size: cover;
             
             border-top: 1px solid #999;
-            border-bottom: 1px solid #999;
+            border-bottom: 4px solid #000;
         }
         
         &__image_provin {
